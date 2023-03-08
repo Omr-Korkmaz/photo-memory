@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  margin: auto;
+  height: 700px;
+  width: 700px;
+}
+
+
+
+.card-grid{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
