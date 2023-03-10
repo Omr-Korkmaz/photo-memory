@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import category from "./components/Categories.json";
+import Button from '@mui/material/Button';
+
 
 import SingleCard from "./components/SingleCard";
 
@@ -82,8 +84,7 @@ function App() {
         <option value="sebze"> vegetable</option>
         <option value="animal"> animal</option>
       </select>
-
-      <button onClick={shuffleCards}>start game</button>
+      <Button onClick={shuffleCards} variant="contained">Start Game</Button>
 
       <div className="card-grid">
         {cards.map((card) => (
