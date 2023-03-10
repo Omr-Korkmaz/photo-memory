@@ -11,6 +11,8 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import SingleCard from "./components/SingleCard";
 
 function App() {
+  const [cardCategory, setCardCategory] = useState('');
+
   const [options, setOptions] = useState(category.animal);
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
@@ -31,7 +33,11 @@ function App() {
     setTurns(0);
   };
 
+
+
+
   const handeCategory = (e) => {
+    setCardCategory(e.target.value);
     if (e.target.value === "animal") {
       setOptions(category.animal);
     } else if (e.target.value === "sebze") {
@@ -88,12 +94,12 @@ function App() {
 
       <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-label">category</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={cardCategory}
-          label="Age"
+          label="cardCategory"
           onChange={handeCategory}
         >
           <MenuItem value="sebze">vegetable</MenuItem>
