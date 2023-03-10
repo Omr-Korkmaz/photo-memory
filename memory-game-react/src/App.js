@@ -79,11 +79,11 @@ function App() {
       <h1>Magic Match</h1>
 
       <select onChange={handeCategory}>
-        <option value="sebze"> sebze</option>
+        <option value="sebze"> vegetable</option>
         <option value="animal"> animal</option>
       </select>
 
-      <button onClick={shuffleCards}>sebzeFunction</button>
+      <button onClick={shuffleCards}>start game</button>
 
       <div className="card-grid">
         {cards.map((card) => (
