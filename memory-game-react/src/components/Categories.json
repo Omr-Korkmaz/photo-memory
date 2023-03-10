@@ -1,0 +1,20 @@
+{
+
+"sebze": [
+    { "src": "./image/cucumber.png", "matched": false },
+    { "src": "./image/mushroom.png", "matched": false },
+    { "src": "./image/okra.png", "matched": false },
+    { "src": "./image/onion.png", "matched": false },
+    { "src": "./image/pea.png", "matched": false },
+    { "src": "./image/potato.png", "matched": false }
+  ],
+  
+  "animal":[
+    { "src": "./image/camel.png", "matched": false },
+    { "src": "./image/cat.png", "matched": false },
+    { "src": "./image/cow.png", "matched": false },
+    { "src": "./image/dog.png", "matched": false },
+    { "src": "./image/horse.png", "matched": false },
+    { "src": "./image/parrot.png", "matched": false }
+  ]
+}
