@@ -76,7 +76,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Magic Match</h1>
+      <h1>Magic Memory</h1>
 
       <select onChange={handeCategory}>
         <option value="sebze"> vegetable</option>
