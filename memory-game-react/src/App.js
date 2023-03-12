@@ -91,7 +91,7 @@ function App() {
       <h1>Magic Memory</h1>
 
 
-
+<Box sx={{display:'flex',  justifyContent:'center', alignItems:'center', gap:'10px', m:'20px'}}>
       <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">category</InputLabel>
@@ -115,7 +115,7 @@ function App() {
         <option value="animal"> animal</option>
       </select> */}
       <Button onClick={shuffleCards} variant="contained">Start Game</Button>
-
+      </Box>
       <div className="card-grid">
         {cards.map((card) => (
           <SingleCard
