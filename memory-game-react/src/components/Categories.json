@@ -1,6 +1,6 @@
 {
 
-"sebze": [
+"vegetable": [
     { "src": "./image/cucumber.png", "matched": false },
     { "src": "./image/mushroom.png", "matched": false },
     { "src": "./image/okra.png", "matched": false },

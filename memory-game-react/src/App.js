@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import category from "./components/Categories.json";
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 import SingleCard from "./components/SingleCard";
 
 function App() {
-  const [cardCategory, setCardCategory] = useState('');
+  const [cardCategory, setCardCategory] = useState("");
 
   const [options, setOptions] = useState(category.animal);
   const [cards, setCards] = useState([]);
@@ -33,15 +33,12 @@ function App() {
     setTurns(0);
   };
 
-
-
-
   const handeCategory = (e) => {
     setCardCategory(e.target.value);
     if (e.target.value === "animal") {
       setOptions(category.animal);
-    } else if (e.target.value === "sebze") {
-      setOptions(category.sebze);
+    } else if (e.target.value === "vegetable") {
+      setOptions(category.vegetable);
     }
   };
 
@@ -90,45 +87,49 @@ function App() {
     <div className="App">
       <h1>Magic Memory</h1>
 
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "10px",
+          m: "20px",
+        }}
+      >
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">category</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={cardCategory}
+              label="cardCategory"
+              onChange={handeCategory}
+            >
+              <MenuItem value="vegetable">vegetable</MenuItem>
+              <MenuItem value="animal">animal</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
 
-<Box sx={{display:'flex',  justifyContent:'center', alignItems:'center', gap:'10px', m:'20px'}}>
-      <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">category</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={cardCategory}
-          label="cardCategory"
-          onChange={handeCategory}
-        >
-          <MenuItem value="sebze">vegetable</MenuItem>
-          <MenuItem value="animal">animal</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
-
-
-
-      {/* <select onChange={handeCategory}>
-        <option value="sebze"> vegetable</option>
-        <option value="animal"> animal</option>
-      </select> */}
-      <Button onClick={shuffleCards} variant="contained">Start Game</Button>
+        <Button onClick={shuffleCards} variant="contained">
+          Start Game
+        </Button>
       </Box>
       <div className="card-grid">
         {cards.map((card) => (
           <SingleCard
             key={card.id}
             card={card}
+            cardCategory={cardCategory}
             handleChoice={handleChoice}
             flipped={card === choiceOne || card === choiceTwo || card.matched}
             disabled={disabled}
           />
         ))}
       </div>
-<div>
-      <p >Turns: {turns}</p>
+      <div>
+        <p>Turns: {turns}</p>
       </div>
     </div>
   );

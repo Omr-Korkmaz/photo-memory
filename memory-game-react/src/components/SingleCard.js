@@ -1,8 +1,8 @@
 import React from 'react'
 import './SingleCard.css'
 
-const SingleCard = ({ card, handleChoice, flipped, disabled }) => {
-
+const SingleCard = ({ card, handleChoice, flipped, disabled, cardCategory }) => {
+console.log(cardCategory)
     const handleClick = () => {
         if (!disabled) {
           handleChoice(card)
@@ -13,7 +13,7 @@ const SingleCard = ({ card, handleChoice, flipped, disabled }) => {
         <div className="card">
           <div className={flipped ? "flipped" : ""}>
             <img className="front" src={card.src} alt="card front" />
-            <img className="back" src="/image/tomato.png" onClick={handleClick} alt="cover" />
+            <img className="back" src={ cardCategory==="animal" ? "/image/animals_back.png" : "/image/vegetable_back.png"} onClick={handleClick} alt="cover" />
           </div>
         </div>
       )
