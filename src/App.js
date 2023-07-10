@@ -19,9 +19,13 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [start,  setStart] = useState(false);
+
 
   // shuffle cards for new game
   const shuffleCards = () => {
+    setStart(true)
+
     const shuffledCards = [...options, ...options]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
@@ -34,6 +38,7 @@ function App() {
   };
 
   const handeCategory = (e) => {
+    setStart(false)
     setCardCategory(e.target.value);
     if (e.target.value === "animal") {
       setOptions(category.animal);
@@ -116,7 +121,7 @@ function App() {
           Start Game
         </Button>
       </Box>
-      <div className="card-grid">
+      {start && <div className="card-grid">
         {cards.map((card) => (
           <SingleCard
             key={card.id}
@@ -128,6 +133,7 @@ function App() {
           />
         ))}
       </div>
+}
       <div>
         <p>Turns: {turns}</p>
       </div>
