@@ -1,5 +1,5 @@
 
-### This is a project created using React. The project includes meemory card game with two categories. Cards are are design by myself.
+### This is a project created using React. The project includes memory card game with two categories. Cards are are design by myself.
 
 
 
