@@ -1,3 +1,12 @@
+
+### This is a project created using React. The project includes meemory card game with two categories. Cards are are design by myself.
+
+
+
+https://github.com/Omr-Korkmaz/photo-memory/assets/39599546/1e9cb78d-f08d-4558-842c-02a59f6e3c28
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
